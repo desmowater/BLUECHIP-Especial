@@ -78,8 +78,9 @@ describe("BluechipEspecialのテスト", function () {
     await expect(contract.connect(externalUser).setAdmin(externalUser.address)).to.be.revertedWith('Ownable: caller is not the owner');
     await expect(contract.connect(externalUser).setBaseURI("")).to.be.revertedWith('Ownable: caller is not the owner');
     await expect(contract.connect(externalUser).setBaseExtension("")).to.be.revertedWith('Ownable: caller is not the owner');
-//    await expect(contract.connect(externalUser).pause(false)).to.be.revertedWith('Ownable: caller is not the owner');
-//    await expect(contract.connect(externalUser).withdraw()).to.be.revertedWith('Ownable: caller is not the owner');
+    await expect(contract.connect(externalUser).setRoyaltyInfo(externalUser.address, 1000)).to.be.revertedWith('Ownable: caller is not the owner');
+    //    await expect(contract.connect(externalUser).pause(false)).to.be.revertedWith('Ownable: caller is not the owner');
+    //    await expect(contract.connect(externalUser).withdraw()).to.be.revertedWith('Ownable: caller is not the owner');
   });
 
   it('tokenIdが1から始まっていることの確認', async function () {

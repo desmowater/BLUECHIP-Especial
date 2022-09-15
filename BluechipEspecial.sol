@@ -15,20 +15,23 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-import 'erc721a/contracts/ERC721A.sol';
+import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/common/ERC2981.sol";
 
-contract BluechipEspecial is ERC721A, Ownable {
+contract BluechipEspecial is ERC721A, Ownable, ERC2981 {
 
     string public baseURI;
     string public baseExtension = ".json";
     uint256 public constant MAX_SUPPLY = 20;
 //    bool internal paused = false;
-    address internal admin;
+    address public admin = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+    uint96 public feeNumerator = 1000; //10000 = fee1%
 
     constructor(
     ) ERC721A('BLUECHIP Especial', 'BCE') {
         setBaseURI('https://....');
+        _setDefaultRoyalty(admin, feeNumerator);
     }
 
     // only owner and admin can mint
@@ -48,6 +51,18 @@ contract BluechipEspecial is ERC721A, Ownable {
         return string(abi.encodePacked(ERC721A.tokenURI(tokenId), baseExtension));
     }
 
+    // The following function is override required by ERC2981.sol.
+
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        override(ERC721A, ERC2981)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
+    }
+
+
     //only owner
 
     function setAdmin(address _newAdmin) public onlyOwner {
@@ -60,6 +75,10 @@ contract BluechipEspecial is ERC721A, Ownable {
 
     function setBaseExtension(string memory _newBaseExtension) public onlyOwner {
         baseExtension = _newBaseExtension;
+    }
+
+    function setRoyaltyInfo(address _receiver, uint96 _feeNumerator) public onlyOwner {
+        _setDefaultRoyalty(_receiver, _feeNumerator);
     }
 
 /*ownerとadminしかミントできないので、pauseは不要？
