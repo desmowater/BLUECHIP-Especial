@@ -25,7 +25,7 @@ contract BluechipEspecial is ERC721A, Ownable, ERC2981 {
     string public baseExtension = ".json";
     uint256 public constant MAX_SUPPLY = 20;
 //    bool internal paused = false;
-    address public admin = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+    address public admin = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4; //This is temporary!!!!!
     uint96 public feeNumerator = 1000; //10000 = fee1%
 
     constructor(
