@@ -1,55 +1,11 @@
 {
-  "name": "Aoi",
-  "description": "【主人公：アオイ】  \n「いつか……オークみたいに、大事なものを守るんだ！！！」  \n記憶喪失の15歳少女。反社会組織 ”ヘルメス” で雑用として二年間活動している。シン日本軍との戦いで拘束され、拷問されているところをレンに救い出される。NFTと干渉する謎の力がある。",
-  "image": "ipfs://QmZMXgiaqAULDHqxKY3cAakP4jbqm4z5o1msD4Bachw6V5",
+  "name": "Aoi_Especial #1",
+  "description": "Aoi_Especial「雲外葵天」#1  \n如月、影の海王は沈没した帆船を墜とす。その種である繊細な葵の花は争いを避け、平和と静寂を求めるだろう。  \nMarch, the Shadow Sea King crashes into a sunken sailing ship. Its seed, a delicate hollyhock flower, avoids conflict and seeks peace and tranquility.",
+  "image": "ipfs://QmU5iJ2DBXwS2KpV9DuWwPRZsxxHYB1mZGTeFYoVSFUYb8",
   "attributes": [
     {
       "trait_type": "Name",
       "value": "Aoi"
-    },
-    {
-      "trait_type": "Owner",
-      "value": "名入れサービス！"
-    },
-    {
-      "trait_type": "体力",
-      "value": 8,
-      "max_value": 10
-    },
-    {
-      "trait_type": "攻撃",
-      "value": 8,
-      "max_value": 10
-    },
-    {
-      "trait_type": "守備",
-      "value": 5,
-      "max_value": 10
-    },
-    {
-      "trait_type": "速さ",
-      "value": 6,
-      "max_value": 10
-    },
-    {
-      "trait_type": "命中",
-      "value": 6,
-      "max_value": 10
-    },
-    {
-      "trait_type": "技術",
-      "value": 3,
-      "max_value": 10
-    },
-    {
-      "trait_type": "知識",
-      "value": 2,
-      "max_value": 10
-    },
-    {
-      "trait_type": "運",
-      "value": 8,
-      "max_value": 10
     }
   ]
 }

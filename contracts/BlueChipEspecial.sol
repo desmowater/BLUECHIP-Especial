@@ -29,7 +29,7 @@ contract BlueChipEspecial is
     mapping(uint256 => string) private _tokenURIs;
     bytes32 public constant ADMIN = keccak256("ADMIN");
 
-    constructor() ERC721Psi("BLUECHIP-Especial", "BCE") {
+    constructor() ERC721Psi("BLUECHIP-GENESIS- Especial", "BCE") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _setupRole(ADMIN, msg.sender);
         _grantRole(ADMIN, 0x407211BeF7cbca2C8897C580EC16c80F2ad5c966);
